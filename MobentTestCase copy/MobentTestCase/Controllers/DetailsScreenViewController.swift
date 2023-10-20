@@ -11,13 +11,6 @@ class DetailsScreenViewController: UIViewController {
     
     var product: Product?
     var productDetail: ProductDetailModal?
-//    {
-//        didSet {
-//          DispatchQueue.main.async {
-//              self.view.reloadInputViews()
-//          }
-//        }
-//      }
 
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescp: UILabel!
@@ -41,7 +34,7 @@ class DetailsScreenViewController: UIViewController {
     func configure(with item: ProductDetailModal) {
         self.productName.text = item.name
         self.productPrice.text = "$\(item.price)"
-        self.productDescp.text = item.description
+        self.productDescp.text = item.description ?? "UNKNOWN DESCP"
 
         if let image = item.image {
             self.productImage.image = image
