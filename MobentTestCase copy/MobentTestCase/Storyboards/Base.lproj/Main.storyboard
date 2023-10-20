@@ -96,7 +96,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="LY0-jT-KUf"/>
                     <connections>
-                        <outlet property="collectionView" destination="YQ0-14-0N3" id="16B-Dq-mp9"/>
+                        <outlet property="collectionView" destination="YQ0-14-0N3" id="Jc7-sy-Zia"/>
                         <segue destination="vyW-fS-HVh" kind="show" identifier="ToDetailsScreenVC" id="Pxb-un-OMj"/>
                     </connections>
                 </viewController>

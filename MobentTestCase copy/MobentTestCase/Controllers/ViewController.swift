@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController{
+class ViewController: UIViewController{
         
     private var products: [Product]? {
         didSet {
@@ -17,6 +17,7 @@ class MainViewController: UIViewController{
         }
       }
     
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class MainViewController: UIViewController{
     }
 }
 
-extension MainViewController: UICollectionViewDataSource {
+extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products?.count ?? 0
@@ -53,7 +54,7 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-extension MainViewController: UICollectionViewDelegate {
+extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let product = products?[indexPath.row]
@@ -61,7 +62,7 @@ extension MainViewController: UICollectionViewDelegate {
     }
 }
 
-extension MainViewController: UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = 150
