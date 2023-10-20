@@ -113,25 +113,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bvD-3E-6Rb">
-                                <rect key="frame" x="76.666666666666686" y="155" width="240" height="263"/>
+                                <rect key="frame" x="76.666666666666686" y="155" width="240" height="283"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MaS-5B-Qsa">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="148"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="185"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4uH-44-QhL" userLabel="Name">
-                                        <rect key="frame" x="0.0" y="158" width="240" height="48.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="195" width="240" height="31.666666666666657"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMV-lj-vDu">
-                                        <rect key="frame" x="0.0" y="216.66666666666669" width="240" height="17"/>
+                                        <rect key="frame" x="0.0" y="236.66666666666669" width="240" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-rQ-fq1" userLabel="Descp">
-                                        <rect key="frame" x="0.0" y="243.66666666666669" width="240" height="19.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="263.66666666666669" width="240" height="19.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -143,7 +143,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bvD-3E-6Rb" firstAttribute="centerX" secondItem="vqu-Mn-kXZ" secondAttribute="centerX" id="T11-Sy-dBR"/>
-                            <constraint firstItem="37b-b3-0Hp" firstAttribute="bottom" secondItem="bvD-3E-6Rb" secondAttribute="bottom" constant="400" id="n5e-RU-o3h"/>
+                            <constraint firstItem="37b-b3-0Hp" firstAttribute="bottom" secondItem="bvD-3E-6Rb" secondAttribute="bottom" constant="380" id="n5e-RU-o3h"/>
                             <constraint firstItem="bvD-3E-6Rb" firstAttribute="top" secondItem="37b-b3-0Hp" secondAttribute="top" id="qsm-UV-oq3"/>
                         </constraints>
                     </view>

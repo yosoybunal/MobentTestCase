@@ -8,13 +8,6 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-//    var product: Product! {
-//        didSet {
-//            priceText.text = "\(product.price)"
-//            nameText.text = product.name
-//            imageView.image = UIImage(named: product.imageURLString)
-//        }
-//    }
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameText: UILabel!

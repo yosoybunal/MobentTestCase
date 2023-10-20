@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MainViewController: UIViewController{
         
     private var products: [Product]? {
         didSet {
@@ -28,14 +28,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             self.products = result.products
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! DetailsScreenViewController
+        destVC.product = sender as? Product
+    }
+}
 
+extension MainViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products?.count ?? 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let product = products?[indexPath.row]
-        performSegue(withIdentifier: "ToDetailsScreenVC", sender: product)
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,16 +51,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.contentView.round(20)
       return cell
     }
+}
+
+extension MainViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = products?[indexPath.row]
+        performSegue(withIdentifier: "ToDetailsScreenVC", sender: product)
+    }
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = 150
         let height = 220
         return CGSize(width: width, height: height)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVC = segue.destination as! DetailsScreenViewController
-        destVC.product = sender as? Product
-    }
 }
-
