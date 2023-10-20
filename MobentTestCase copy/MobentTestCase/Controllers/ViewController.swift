@@ -17,6 +17,7 @@ class ViewController: UIViewController{
         }
       }
     
+    var productDetail: ProductDetailModal? 
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,6 +26,7 @@ class ViewController: UIViewController{
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         title = "Products"
+        
         APICaller.getProducts { result in
             self.products = result.products
         }

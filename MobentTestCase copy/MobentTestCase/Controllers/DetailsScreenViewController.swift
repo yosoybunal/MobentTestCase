@@ -10,40 +10,44 @@ import UIKit
 class DetailsScreenViewController: UIViewController {
     
     var product: Product?
-    var productDetail: ProductDetailModal? {
-        didSet {
-          DispatchQueue.main.async {
-              self.view.reloadInputViews()
-          }
-        }
-      }
+    var productDetail: ProductDetailModal?
+//    {
+//        didSet {
+//          DispatchQueue.main.async {
+//              self.view.reloadInputViews()
+//          }
+//        }
+//      }
 
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescp: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         DispatchQueue.main.async {
-            APICaller.getProductDetails(product: self.product!) { result in
-                self.productDetail = result
+            APICaller.getProductDetails(id: self.product!.id) { result in
+                   self.productDetail = result
+                }
             }
         }
-        self.configure(with: product!)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.configure(with: productDetail!)
     }
     
-    func configure(with item: Product) {
+    func configure(with item: ProductDetailModal) {
         self.productName.text = item.name
         self.productPrice.text = "$\(item.price)"
-        self.productDescp.text = "TEST"
+        self.productDescp.text = item.description
 
         if let image = item.image {
             self.productImage.image = image
       }
       else {
-          self.productImage.setImageFrom(item)
+          self.productImage.setImageFrom(product!)
       }
     }
 }

@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case canNotParseData
 }
 
+
 public class APICaller {
 
     static func getProducts(completion: @escaping (Products) -> Void) {
@@ -33,21 +34,22 @@ public class APICaller {
         } .resume()
     }
     
-    static func getProductDetails(product: Product, completion: @escaping (ProductDetailModal) -> Void) {
-        let urlString = "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/"+"\(product.id)"+"/detail"
+    static func getProductDetails(id: String, completion: @escaping (ProductDetailModal) -> Void) {
+        
+            let urlString = "https://s3-eu-west-1.amazonaws.com/developer-application-test/cart/"+"\(id)"+"/detail"
 
-        guard let url = URL(string: urlString) else {
-            return
-        }
+            guard let url = URL(string: urlString) else {
+                return
+            }
 
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            do{
-                let fetchProductDetail = try JSONDecoder().decode(ProductDetailModal.self, from: data!)
-                completion(fetchProductDetail)
-            }
-            catch {
-                print("parsing error")
-            }
-        } .resume()
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                do{
+                    let fetchProductDetail = try JSONDecoder().decode(ProductDetailModal.self, from: data!)
+                    completion(fetchProductDetail)
+                }
+                catch {
+                    print("parsing error")
+                }
+            }.resume()
     }
 }
