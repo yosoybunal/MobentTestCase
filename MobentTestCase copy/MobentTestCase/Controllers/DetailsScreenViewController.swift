@@ -35,12 +35,6 @@ class DetailsScreenViewController: UIViewController {
         self.productName.text = item.name
         self.productPrice.text = "$\(item.price)"
         self.productDescp.text = item.description ?? "UNKNOWN DESCP"
-
-        if let image = item.image {
-            self.productImage.image = image
-      }
-      else {
-          self.productImage.setImageFrom(product!)
-      }
+        self.productImage.setImageFrom(product!)
     }
 }

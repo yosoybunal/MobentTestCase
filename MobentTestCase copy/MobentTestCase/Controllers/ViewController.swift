@@ -9,13 +9,7 @@ import UIKit
 
 class ViewController: UIViewController{
         
-    private var products: [Product]? {
-        didSet {
-          DispatchQueue.main.async {
-              self.collectionView.reloadData()
-          }
-        }
-      }
+    private var products: [Product]?
     
     var productDetail: ProductDetailModal? 
 
@@ -29,6 +23,9 @@ class ViewController: UIViewController{
         
         APICaller.getProducts { result in
             self.products = result.products
+        }
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
     
